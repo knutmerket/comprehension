@@ -41,7 +41,6 @@ def program(text, comprehension_as_ratio, language="NO"):
         else:
             res.append(blanked_word_dict.get(word, word))
     final_result = "".join(res)
-    print("\n", 'Here is the "comprehension adjusted" output:', "\n", final_result)
 
 
     # Then we extract any "non-chracters" (e.g. punctuation, numbers, white spaces etc.) from the original text string, and add them back into the result
@@ -53,9 +52,8 @@ def program(text, comprehension_as_ratio, language="NO"):
         i += 1
     for k,v in non_character_dict.items():
         final_result = final_result[:k] + v + final_result[k:]
-    print("HER KOMMER OPPRINELIG TEKST \n", unaltered_text)
-    print("HER KOMMER DICT \n", non_character_dict)
-    print("HER KOMMER final_result \n", final_result)
+    # Print final result
+    print("\n", 'Here is the "comprehension adjusted" output:', "\n", final_result)
 
 
 # TODO: Fetches freqlist from get_freq_list_table function
@@ -72,9 +70,9 @@ def get_freq_list_table(language):
     # print(df)
 
 
-#test_string = "Det ble dramatisk på Miljøpartiet De Grønnes digitale landsmøte lørdag. Ny partileder skulle velges. Une Bastholm meldte overraskende sin avgang som partileder i august. Det sto mellom nestleder Arild Hermstad og utfordrer Kristoffer Robin Haug. Hermstad var den suverent beste kandidaten», sa valgkomiteens leder Trude Thy. Thy talte på vegne av en samlet valgkomité. Men store deler av den digitale landsmøtesalen var ikke enig. Hermstad maktet å overbevise nøyaktig halvparten av de stemmegivende. Med 102 mot 101 stemmer ble Hermstad valgt. Én blank stemme ble utslagsgivende. Hadde den gått til Haug, kunne valget blitt avgjort ved loddtrekning. Haugs popularitet må sees på som et uttrykk for misnøye med «sentralmakten» i MDG. Valgresultatet i 2021 var et hardt slag internt i partiet, ikke minst fordi store deler av valgkampen handlet om klima. Forslagsstiller for Haug, Brynjar Arnfinnson, mente Haug var bedre til å gi folk håp – velgere så vel som medlemmer. Støttetaler Kriss Rokkan Iversen trakk også frem at han var både «by og land». Konfliktlinjen sentrum-periferi preger også MDG. Selv om Haug er fra Oslo, blir han ansett som en slags distriktenes mann i partiet, i motsetning til Hermstad. Mindre synlighet, mer introspeksjon. Haug selv snakket om en «ny kurs». Men det er ikke noen stor politisk forskjell mellom Hermstad og Haug. Begge vil bredde ut partiet slik at det oppfattes som mer enn rent miljøparti. Haug har derimot betonet behovet for å bygge organisasjon og skue innover, om nødvendig på bekostning av synlighet i mediene. Mens Hermstad har vært krystallklar på at MDG skal søke regjeringsmakt ved neste anledning, har Haug vært mer skeptisk."
-test_string = "高马二溪自然环境优越，所产茶叶，自古享有“天生好原料”的美誉。明·洪武24年（1391年），被定为贡茶。清嘉庆年间，第一支千两茶采用高马二溪原料于边江村踩制。清道光四年（1824年），高马二溪立“奉上严禁”碑，钦定为皇家茶园。1953年，毛主席亲点湖南省委筹备两百担高马二溪优质安化黑茶作为国礼赠送前苏联友人。高马二溪是具有代表性的高品质安化黑茶品牌，是高端优质黑茶的代名词"
+test_string = "Det ble dramatisk på Miljøpartiet De Grønnes digitale landsmøte lørdag. Ny partileder skulle velges. Une Bastholm meldte overraskende sin avgang som partileder i august. Det sto mellom nestleder Arild Hermstad og utfordrer Kristoffer Robin Haug. Hermstad var den suverent beste kandidaten», sa valgkomiteens leder Trude Thy. Thy talte på vegne av en samlet valgkomité. Men store deler av den digitale landsmøtesalen var ikke enig. Hermstad maktet å overbevise nøyaktig halvparten av de stemmegivende. Med 102 mot 101 stemmer ble Hermstad valgt. Én blank stemme ble utslagsgivende. Hadde den gått til Haug, kunne valget blitt avgjort ved loddtrekning. Haugs popularitet må sees på som et uttrykk for misnøye med «sentralmakten» i MDG. Valgresultatet i 2021 var et hardt slag internt i partiet, ikke minst fordi store deler av valgkampen handlet om klima. Forslagsstiller for Haug, Brynjar Arnfinnson, mente Haug var bedre til å gi folk håp – velgere så vel som medlemmer. Støttetaler Kriss Rokkan Iversen trakk også frem at han var både «by og land». Konfliktlinjen sentrum-periferi preger også MDG. Selv om Haug er fra Oslo, blir han ansett som en slags distriktenes mann i partiet, i motsetning til Hermstad. Mindre synlighet, mer introspeksjon. Haug selv snakket om en «ny kurs». Men det er ikke noen stor politisk forskjell mellom Hermstad og Haug. Begge vil bredde ut partiet slik at det oppfattes som mer enn rent miljøparti. Haug har derimot betonet behovet for å bygge organisasjon og skue innover, om nødvendig på bekostning av synlighet i mediene. Mens Hermstad har vært krystallklar på at MDG skal søke regjeringsmakt ved neste anledning, har Haug vært mer skeptisk."
+#test_string = "高马二溪自然环境优越，所产茶叶，自古享有“天生好原料”的美誉。明·洪武24年（1391年），被定为贡茶。清嘉庆年间，第一支千两茶采用高马二溪原料于边江村踩制。清道光四年（1824年），高马二溪立“奉上严禁”碑，钦定为皇家茶园。1953年，毛主席亲点湖南省委筹备两百担高马二溪优质安化黑茶作为国礼赠送前苏联友人。高马二溪是具有代表性的高品质安化黑茶品牌，是高端优质黑茶的代名词"
 
 
-program(test_string, 0.8, "CN")
+program(test_string, 0.8, "NO")
 #get_freq_list_table("NO")
